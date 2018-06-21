@@ -34,7 +34,7 @@ end
 #end
 
  def buscar_cards(cards)
-
+   
  end
 
 cards = []
