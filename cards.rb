@@ -76,7 +76,7 @@ while (opcao != SAIR) do
         if c[:ingles].include? texto_busca
           imprimir_cards(c)
         end
-        
+
       else
         puts 'Opção inválida!'
       end
