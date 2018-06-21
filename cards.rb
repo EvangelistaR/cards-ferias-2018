@@ -31,11 +31,11 @@ end
 
 # def imprime_card(card)
 
-# end
+#end
 
-# def buscar_cards(cards)
+ def buscar_cards(cards)
 
-# end
+ end
 
 cards = []
 
