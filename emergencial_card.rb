@@ -1,6 +1,6 @@
 require_relative 'card'
 
-Class Emergencial_Card < Card
+Class EmergencialCard < Card
   attr_accessor :emergencial_msg, :emergencial_phone
 
   def initialize(pt, en = "")
