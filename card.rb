@@ -25,5 +25,7 @@ Class Card
 
 
   def include?(texto)
-    portugues().include?(texto) || ingles().include? (texto)
+    portugues().include?(texto) || ingles().include?(texto)
   end
+
+end
