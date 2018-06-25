@@ -34,7 +34,7 @@ def inserir_cards(cards)
       ctrl = true
     end
   end
-
+  
   if ctrl == false
     cards << Card
     puts "O card '#{card}' foi inserido com sucesso"
