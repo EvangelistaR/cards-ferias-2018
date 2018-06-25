@@ -1,3 +1,5 @@
+require_relative 'card'
+
 INSERIR_CARD = 1
 EXIBIR_CARD = 2
 BUSCAR_CARD = 3
@@ -16,25 +18,42 @@ def menu()
 
 end
 
-def inserir_cards
+def inserir_cards(cards)
   puts 'Insira uma expressão em Português:'
   portugues = gets.chomp
   puts 'Insira uma expressão em Ingles:'
   ingles = gets.chomp
-  card = {portugues: portugues, ingles: ingles}
+
+  card = Card.new(portugues,ingles)
+  #variavel de controle
+  ctrl = false
+
+  cards.each do |i|
+    if i == card
+      puts 'Esse card já foi cadastrado!'
+      ctrl = true
+    end
+  end
+
+  if ctrl == false
+    cards << Card
+    puts "O card '#{card}' foi inserido com sucesso"
+  end
+
   return card
 end
 
 def imprimir_cards(cards)
-  puts "PT-Br: #{cards[:portugues]} ||EN: #{cards[:ingles]}"
+  puts 'Cartões inseridos:'
+  puts
+  cards.each do |card|
+    cards.imprimir()
+  end
+  puts
 end
 
-# def imprime_card(card)
+ def buscar_cards(cartao)
 
-#end
-
- def buscar_cards(cards)
-   
  end
 
 cards = []
@@ -48,13 +67,10 @@ while (opcao != SAIR) do
   if (opcao == INSERIR_CARD)
     puts
     c = inserir_cards
-    imprimir_cards(c)
-    cards << c
 
   elsif (opcao == EXIBIR_CARD)
-    cards.each do |card|
-      imprimir_cards(card)
-    end
+    imprimir_cards(cards)
+    puts
 
   elsif (opcao == BUSCAR_CARD)
     puts 'Em qual idioma a busca será feita?'
@@ -72,7 +88,7 @@ while (opcao != SAIR) do
           imprimir_cards(c)
         end
 
-      elsif
+      elsif (busca_idioma == "I")
         if c[:ingles].include? texto_busca
           imprimir_cards(c)
         end
@@ -81,6 +97,7 @@ while (opcao != SAIR) do
         puts 'Opção inválida!'
       end
     end
+
   elsif (opcao == SAIR)
     puts 'Obrigado por utilizar o Cards System'
   else
