@@ -1,4 +1,4 @@
-Class Card
+class Card
   attr_accessor :ingles, :portugues
 
   def initialize(pt, en = "")
@@ -25,7 +25,7 @@ Class Card
 
 
   def include?(texto)
-    portugues().include?(texto) || ingles().include?(texto)
+    portugues().include?texto || ingles().include?texto
   end
 
 end
