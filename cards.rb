@@ -1,3 +1,10 @@
+=begin
+**************************Pendencias**************************
+ Ainda falta implementar a utilização do card emergencial
+ Utilizar o 'select' para fazer a busca
+ Procurar uma melhoria para o menu ~ Não efetuar chamada 2x ~
+ 
+=end
 require_relative 'card'
 
 INSERIR_CARD = 1
@@ -29,13 +36,13 @@ def inserir_cards(cards)
   ctrl = false
 
   cards.each do |i|
-    if i == card
+    if (i == card)
       puts 'Esse card já foi cadastrado!'
       ctrl = true
     end
   end
-  
-  if ctrl == false
+
+  if (ctrl == false)
     cards << Card
     puts "O card '#{card}' foi inserido com sucesso"
   end
@@ -52,9 +59,9 @@ def imprimir_cards(cards)
   puts
 end
 
- def buscar_cards(cartao)
+# def buscar_cards(cartao)
 
- end
+# end
 
 cards = []
 
@@ -84,13 +91,13 @@ while (opcao != SAIR) do
 
     cards.each do |c|
       if (busca_idioma == "P")
-        if c[:portugues].include? texto_busca
-          imprimir_cards(c)
+        if c[:portugues].include?(texto_busca)
+          puts "Cartão encontrado: #{c}"
         end
 
       elsif (busca_idioma == "I")
-        if c[:ingles].include? texto_busca
-          imprimir_cards(c)
+        if c[:ingles].include?(texto_busca)
+          puts "Cartão encontrado: #{c}"
         end
 
       else
