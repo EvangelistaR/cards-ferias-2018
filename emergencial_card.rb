@@ -1,6 +1,6 @@
 require_relative 'card'
 
-Class EmergencialCard < Card
+class EmergencialCard < Card
   attr_accessor :emergencial_msg, :emergencial_phone
 
   def initialize(pt, en = "")
@@ -12,4 +12,5 @@ Class EmergencialCard < Card
   def to_s
     "#{super()}\n#{emergencial_msg()} #{emergencial_phone()}"
   end
+
 end
