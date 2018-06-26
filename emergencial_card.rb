@@ -9,7 +9,7 @@ class EmergencialCard < Card
     @emergencial_msg = "Em caso de emergencias ligue para a polícia."
   end
 
-  def to_s
+  def to_s()
     "#{super()}\n#{emergencial_msg()} #{emergencial_phone()}"
   end
 
