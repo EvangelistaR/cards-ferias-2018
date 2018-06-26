@@ -7,11 +7,11 @@ class Card
   end
 
   def imprimir()
-    puts "Cartão: #{to_s()}"
+    puts "Cartão: " + to_s()
   end
 
-  def to_s
-      "#{portugues()} -> #{ingle()} "
+  def to_s()
+      "#{portugues()} -> #{ingles()}"
   end
 
   def ==(outro_cartao)
@@ -25,7 +25,7 @@ class Card
 
 
   def include?(texto)
-    portugues().include?texto || ingles().include?texto
+    portugues().include?(texto) || ingles().include?(texto)
   end
 
 end
